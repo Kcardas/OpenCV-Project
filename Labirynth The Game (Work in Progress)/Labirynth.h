@@ -1,7 +1,11 @@
-//
-// Created by igor on 13/09/2019.
-//
+#ifndef LABIRYNTH_LABIRYNTH_H
+#define LABIRYNTH_LABIRYNTH_H
 
+#include <string>
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <unistd.h>
 
 #include <opencv2/opencv.hpp>
 #include <opencv2/core.hpp>
@@ -11,28 +15,8 @@
 #include <opencv2/imgcodecs.hpp>
 #include <opencv2/video/tracking.hpp>
 
-
-#include <string>
-#include <iostream>
-#include <iomanip>
-#include <vector>
-#include <unistd.h>
-
 using namespace cv;
 using namespace std;
-static void help()
-{
-    // print a welcome message, and the OpenCV version
-    cout << "\nThis is a demo of Lukas-Kanade optical flow lkdemo(),\n"
-            "Using OpenCV version " << CV_VERSION << endl;
-    cout << "\nIt uses camera by default, but you can provide a path to video as an argument.\n";
-    cout << "\nHot keys: \n"
-            "\tESC - quit the program\n"
-            "\tr - auto-initialize tracking\n"
-            "\tc - delete all the points\n"
-            "\tn - switch the \"night\" mode on/off\n"
-            "To add/remove a feature point click it\n" << endl;
-}
 
 Point2f point;
 bool addRemovePt = false;
@@ -47,15 +31,16 @@ static void onMouse( int event, int x, int y, int /*flags*/, void* /*param*/ )
     }
 }
 
-int main( int argc, char** argv ) {
-
+class Labirynth {
+public:
+  Labirynth(int argc, char** argv){
     VideoCapture cap;
     TermCriteria termcrit(TermCriteria::COUNT | TermCriteria::EPS, 20, 0.03);
     Size subPixWinSize(10, 10), winSize(31, 31);
     const int MAX_COUNT = 500;
     bool needToInit = false;
     bool nightMode = false;
-    help();
+    //help();
     cv::CommandLineParser parser(argc, argv, "{@input|0|}");
     string input = parser.get<string>("@input");
     if (input.size() == 1 && isdigit(input[0]))
@@ -64,7 +49,7 @@ int main( int argc, char** argv ) {
         cap.open(input);
     if (!cap.isOpened()) {
         cout << "Could not initialize capturing...\n";
-        return 0;
+        //return 0;
     }
     namedWindow("LK Demo", 1);
     setMouseCallback("LK Demo", onMouse, 0);
@@ -175,6 +160,10 @@ int main( int argc, char** argv ) {
             std::swap(points[1], points[0]);
             cv::swap(prevGray, gray);
         }
-        return 0;
+        //return 0;
+        break;
     }
-}
+  }
+};
+
+#endif
