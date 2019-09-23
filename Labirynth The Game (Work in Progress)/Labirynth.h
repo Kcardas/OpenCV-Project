@@ -15,6 +15,8 @@
 #include <opencv2/imgcodecs.hpp>
 #include <opencv2/video/tracking.hpp>
 
+#include "Fases.h"
+
 using namespace cv;
 using namespace std;
 
@@ -59,10 +61,14 @@ public:
 
 
         cap >> frame;
-        Mat image3 = imread("projeto.png", 0);
-        Mat image2 = imread("projeto2.png", 0);
-        cv::resize(image3, image3, Size(50, 500));
-        cv::resize(image2, image2, Size(100, 100));
+        Mat image3; //= imread("projeto.png", 0);
+        Mat image2;// = imread("projeto2.png", 0);
+        //cv::resize(image3, image3, Size(50, 500));
+        //cv::resize(image2, image2, Size(100, 100));
+        Fases Fase = Fases(&image3, &image2, 1);
+        //Fase.fase1(&image3, &image2);
+
+        cap >> frame;
 
         while(1) {
             cap >> frame;
