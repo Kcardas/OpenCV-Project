@@ -51,8 +51,8 @@ public:
         cout << "Could not initialize capturing...\n";
         //return 0;
     }
-    namedWindow("LK Demo", 1);
-    setMouseCallback("LK Demo", onMouse, 0);
+    namedWindow("Labirynth", 1);
+    setMouseCallback("Labirynth", onMouse, 0);
     Mat gray, prevGray, image, frame;
     vector<Point2f> points[2];
     for (;;) {
@@ -141,7 +141,7 @@ public:
                 addRemovePt = false;
             }
             needToInit = false;
-            imshow("LK Demo", image);
+            imshow("Labirynth", image);
             char c = (char) waitKey(10);
             if (c == 27)
                 break;

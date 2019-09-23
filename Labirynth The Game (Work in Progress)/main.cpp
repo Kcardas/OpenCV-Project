@@ -19,7 +19,7 @@ int main( int argc, char** argv ){
 
       if (key == 49){
           cap.release();
-          destroyWindow("frame");
+          //destroyWindow("Labirynth");
           Labirynth(argc, argv);
       }else break;
   }

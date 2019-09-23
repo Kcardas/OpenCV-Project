@@ -35,7 +35,7 @@ public:
                   srcBGR.copyTo(dstROI);
               }
 
-              imshow("frame", newFrame);
+              imshow("Labirynth", newFrame);
 
               key = (char) waitKey(30);
 
