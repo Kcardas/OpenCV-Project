@@ -1,0 +1,3 @@
+/home/igor/Documentos/codigos/c++/testecv/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/igor/Documentos/codigos/c++/testecv/cmake-build-debug/CMakeFiles/testecv.dir
+/home/igor/Documentos/codigos/c++/testecv/cmake-build-debug/CMakeFiles/edit_cache.dir
