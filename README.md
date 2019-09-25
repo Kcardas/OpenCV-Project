@@ -3,7 +3,7 @@ Project of my Programing Languange I class. Which we'll be using OpenCV framewor
 
 Universidade Federal da Paraíba - UFPB
 Cadeira: Linguagem de Programação I - Laboratorio de Linguagem de Programação I
-Prof(s) - Tiago Maritan e Derzu Omaia 
+Professores - Tiago Maritan e Derzu Omaia 
 
 Grupo:
       Iogo Sadrack (Implementação do projeto/Integração do projeto) Matrícula - 20180088630
